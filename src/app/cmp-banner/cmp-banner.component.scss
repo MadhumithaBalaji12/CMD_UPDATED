@@ -1,0 +1,52 @@
+/* src/app/cmp-banner/cmp-banner.component.scss */
+.cmp-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999; // the banar stays on top layer
+    .cmp-message {
+      flex-grow: 1;
+    }
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;// blur the whole page
+      backdrop-filter: blur(5px); /* Adjust blur intensity */
+      z-index: -1; /* Ensure it stays behind the banner */
+    }
+  
+    .cmp-actions {
+      display: flex;
+      gap: 10px;
+  
+      button {
+        padding: 10px 20px;
+        border: none;
+        color: #0b0b0b;
+        cursor: pointer;
+  
+        &:first-child {
+          background-color:#fff; /* Accept button color */
+        }
+  
+        &:last-child {
+          background-color: #fff; /* Decline button color */
+        }
+  
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+  
